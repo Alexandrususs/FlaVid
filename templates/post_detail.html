@@ -1,0 +1,21 @@
+{% extends 'shabl.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ article.title }}</h1>
+
+
+    <div class="alert alert-info">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.intro }}</p>
+        <p>{{ article.text }}</p>
+        <p><b>Дата: {{ article.date.date() }}</b></p>
+        <a href="/posts/{{ article.id }}/del" class="btn btn-danger">Удалить статью</a>
+        <a href="/posts/{{ article.id }}/update" class="btn btn-success">Редактировать</a>
+    </div>
+</div>
+{% endblock %}
